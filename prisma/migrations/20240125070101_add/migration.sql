@@ -68,7 +68,7 @@ CREATE TABLE `Cart` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Cart_product` (
+CREATE TABLE `Caet_product` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `quantity` INTEGER NOT NULL DEFAULT 1,
     `cart_id` INTEGER NOT NULL,
@@ -114,10 +114,10 @@ ALTER TABLE `Favorite_Product` ADD CONSTRAINT `Favorite_Product_product_id_fkey`
 ALTER TABLE `Cart` ADD CONSTRAINT `Cart_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `User`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Cart_product` ADD CONSTRAINT `Cart_product_cart_id_fkey` FOREIGN KEY (`cart_id`) REFERENCES `Cart`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `Caet_product` ADD CONSTRAINT `Caet_product_cart_id_fkey` FOREIGN KEY (`cart_id`) REFERENCES `Cart`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Cart_product` ADD CONSTRAINT `Cart_product_product_id_fkey` FOREIGN KEY (`product_id`) REFERENCES `Product`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `Caet_product` ADD CONSTRAINT `Caet_product_product_id_fkey` FOREIGN KEY (`product_id`) REFERENCES `Product`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `Product` ADD CONSTRAINT `Product_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `User`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;

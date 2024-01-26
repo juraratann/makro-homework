@@ -11,10 +11,10 @@ datasource db {
 }
 
 model Search {
-  id            Int           @id @default(autoincrement())
-  name          String
-  count         Int
-  user_searches User_Search[]
+  id          Int           @id @default(autoincrement())
+  name        String
+  count       Int
+  User_Search User_Search[]
 }
 
 model User_Search {
@@ -22,7 +22,7 @@ model User_Search {
   user     User   @relation(fields: [userId], references: [id])
   userId   Int    @map("user_id")
   search   Search @relation(fields: [searchId], references: [id])
-  searchId Int    @map("search_id")
+  searchId Int @map("search_id")
 }
 
 enum Role {
@@ -51,7 +51,7 @@ model User {
   favorites         Favorite[]
   cart              Cart?
   orders            Order[]
-  user_searches     User_Search[]
+  User_Search       User_Search[]
 }
 
 model Shipping_Address {
